@@ -1,0 +1,42 @@
+#ifndef GLOBALS_H
+#define GLOBALS_H
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+#define INT		100
+#define BOOL		101
+#define VOID		102
+
+#define RD		103
+#define WE		104
+#define IF_THEN		105
+#define IF_THEN_ELSE	106
+#define EQUAL		107
+#define PLUS		108
+#define MINUS		109
+#define MUL		110
+#define DIV		111
+#define LT		112
+#define GT		113
+#define LTE		123
+#define GTE		122
+#define ISEQUAL		123
+#define SEQ		114
+
+#define CONST		115
+#define VARIABLE	116
+#define ARRAY		117
+#define IF		118
+#define THEN		119
+#define ELSE		120
+#define ENDIF		121
+
+#define MAXLEN		30
+
+int 	lineno;
+int	count;
+FILE* fp;
+
+#endif

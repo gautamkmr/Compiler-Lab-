@@ -1,0 +1,10 @@
+Beg
+decl
+	boolean a,b,c;
+	integer e,f;
+enddecl
+read(b);
+read(a);
+c = a + b;
+write(c);
+End

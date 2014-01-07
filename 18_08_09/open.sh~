@@ -1,0 +1,1 @@
+gedit Exprtree.y SymbTab.c AbsSynTree.c  Exprtree.l globals.h SymbTab.h AbsSynTree.h inp script.sh

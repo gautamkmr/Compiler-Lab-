@@ -1,0 +1,11 @@
+Beg
+decl
+	boolean a,b,c;
+	integer e,f;
+enddecl
+
+read(f);
+read(c);
+b = 12*c;
+write(b+3);
+End

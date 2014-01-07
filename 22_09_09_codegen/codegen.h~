@@ -1,0 +1,29 @@
+#ifndef CODEGEN_H
+#define CODEGEN_H
+
+#include "AbsSynTree.h"
+
+
+/*
+ * ArrFlag =  1  => Array contents will be loaded onto a register in Codegen()
+ * ArrFlag =  0  => Only the binding of the array will be loaded onto a register in CodeGen
+ */
+int 	ArrFlag;
+
+/*
+ * Used to keep count of the registers used
+ */
+int	regcount;
+
+/*
+ * Generates the SIM code.
+ * Arguments:
+ *	ARG1 : Specifies the root of the AST.
+ *
+ * Precondition	:	The code must be syntactically and semantically correct.
+ * Postcondition:	The SIM code will be generated to a file.
+ * Comments	:
+ */
+int CodeGen(NODPTR);
+#endif
+

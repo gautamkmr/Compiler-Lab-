@@ -1,0 +1,10 @@
+#include "AbsSynTree.h"
+
+void main()
+{
+	NODPTR a = MakeLeaf(SEQ,NULL);
+	NODPTR b = MakeLeaf(RD,NULL);
+	NODPTR c = MakeLeaf(SEQ,NULL);
+	ConnectNodes(a,b,c);
+	Print(a);
+}

@@ -1,0 +1,40 @@
+begin
+decl
+	integer a[5], b[5], i;
+	boolean r;
+enddecl
+
+a[0] = 10;
+a[1] = 20;
+a[2] = 30;
+a[3] = 40;
+a[4] = 50;
+i = 10;
+
+b[0] = a[0];
+b[1] = a[1];
+b[2] = a[2];
+b[3] = a[3];
+b[4] = a[4];
+
+r = (b[0]>b[1]) AND (b[1]>b[2]);
+r = NOT r;
+
+if(NOT r) then
+	write(11111);
+else
+	write(22222);
+endif;
+
+while (i<=10) do
+	write(i);
+	i = i+1;
+endwhile;
+
+write(b[0]+1);
+write(b[1]+2);
+write(b[2]+3);
+write(b[3]+4);
+write(b[4]+5);
+
+end

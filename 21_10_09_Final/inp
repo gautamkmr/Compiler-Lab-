@@ -1,0 +1,28 @@
+decl
+	integer f(boolean a; integer x; boolean c);	
+enddecl
+
+integer f(boolean a; integer x; boolean c) {
+	decl
+		integer temp;
+	enddecl
+begin
+	if (x > 500) then
+		temp = 500;
+	else
+		temp = f(true, 500, c);
+	endif;
+	return temp;
+end
+}
+
+integer main(){
+	decl
+		integer test;
+	enddecl
+begin
+	test = f(true, 600, false);
+	write(test);
+	return 0;
+end
+}

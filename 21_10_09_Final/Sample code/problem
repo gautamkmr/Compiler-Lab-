@@ -1,0 +1,28 @@
+decl
+	integer f(integer x);	
+enddecl
+
+integer f(integer x) {
+	decl
+		integer temp;
+	enddecl
+begin
+	if (x > 500) then
+		temp = 500;
+	else
+		temp = f(f(500));
+	endif;
+	return temp;
+end
+}
+
+integer main(){
+	decl
+		integer test;
+	enddecl
+begin
+	test = f(500);
+	write(test);
+	return 0;
+end
+}

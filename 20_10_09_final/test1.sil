@@ -1,0 +1,39 @@
+decl
+	integer x,y,a[10],b[20];
+	integer f1(integer a1,a2; boolean b1), f2();
+	boolean t, q[10], f3(integer x);
+	integer swap(integer &x, &y);
+	
+	integer factorial(integer n, x; integer x1,y);
+	integer sy();
+	integer as[100], s[10];
+enddecl
+
+integer factorial (integer n,x; integer x1,y) {
+	decl
+		integer rvalue;
+	enddecl
+begin
+	if (n == 1) then
+		rvalue = as[1];
+	else
+		rvalue = 0;
+	endif;
+return 0; 
+end
+}
+
+integer main(){
+decl
+	integer x, i;
+	boolean t;
+enddecl
+begin
+	while (i <= x) do
+		i = factorial(factorial(x,x,x,x),x,-2+3,x);
+		i = i + 1;
+	endwhile;
+	write(s[1]+y);
+	return 0;
+end
+}

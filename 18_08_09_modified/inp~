@@ -1,0 +1,8 @@
+Beg
+decl
+	integer f[10],g[12];
+	integer x,y;
+	boolean r;
+enddecl
+f[1] = 1;
+End

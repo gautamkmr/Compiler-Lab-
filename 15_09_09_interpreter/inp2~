@@ -1,0 +1,17 @@
+Beg
+decl
+	integer a,b,c,d;
+	boolean x,y;
+enddecl
+
+read(d);
+
+read(b);
+a=a+(b+(c+d));
+
+c = a + b ;
+d = d < a + b<a ;
+
+write(c);
+
+End

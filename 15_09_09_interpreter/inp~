@@ -1,0 +1,44 @@
+begin
+decl
+	integer temp, i, j;
+	integer a[10];
+	boolean r;
+enddecl
+
+temp = 0;
+i = 0;
+j = 0;
+
+
+write(temp); 
+
+while temp < 10 do
+	read(a[temp]);
+	temp = temp + 1;
+endwhile;
+
+temp = a[a[5]+1];
+write(temp); 
+
+
+while i < 10 do
+
+	while j < (9-i) do
+		if a[j] > a[j+1] then
+			temp = a[j];
+			a[j] = a[j+1];
+			a[j+1] = temp;
+		endif;
+		j = j + 1;
+	endwhile;
+	j = 0;
+	i = i + 1;
+endwhile;
+
+temp = 0;
+while temp < 10 do
+	write(a[temp]);
+	temp = temp + 1;
+endwhile;
+
+end

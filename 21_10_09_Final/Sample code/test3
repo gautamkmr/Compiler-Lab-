@@ -1,0 +1,50 @@
+decl
+	integer arr[1000];
+	integer key;
+	integer bin(integer st, en);	
+enddecl
+
+integer bin (integer st, en) {
+	decl
+		integer mid, temp;
+	enddecl
+begin
+	if (st <= en) then
+		mid = (st + en)/2;
+		if (arr[mid]==key) then
+			temp = mid;
+		else
+			if(arr[mid] > key) then
+				temp = bin(st, mid-1);
+			else
+				temp = bin(mid+1, en);
+			endif;
+		endif;
+	else
+		temp = -1;
+	endif;
+	return temp;
+end
+}
+
+integer main(){
+	decl
+		integer test;
+	enddecl
+begin
+	test = 0;
+	while (test < 10) do
+		arr[test] = test;
+		test = test + 1;
+	endwhile;
+	test = 0;
+	while (test < 10) do
+		write(arr[test]);
+		test = test + 1;
+	endwhile;
+	read(key);
+	test = bin(0,9);
+	write(test);
+	return 0;
+end
+}

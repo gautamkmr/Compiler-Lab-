@@ -1,0 +1,58 @@
+%{
+	#include <stdio.h>
+	#include <string.h>
+	int yylex();
+	void yyerror( char* );
+	
+	struct Symbol_table
+	{
+		char* name;
+		int type;
+		union
+		{
+			int var;
+			boolean bool;
+		} value;
+		struct Symbol_table* next;
+	} *head;
+	
+	typedef struct Symbol_table SymbolTable ;
+	SymbolTable* write(char*, int);
+	SymbolTable* read(char*);
+%}
+
+%option noyywrap
+%union{
+	SymbolTable* tptr;
+	int val;
+}
+
+%token <val> NUM
+%token <tptr> VAR
+
+%right '='
+%left '+' '-'
+%left '*' '/'
+
+%%
+
+	program:
+		|program statement 
+		;
+	statement:
+		'\n'
+		|expr '\n'	{ printf("\n%d\n", $1); }
+		;
+	expr: 		NUM { $$ = $1;
+		|	VAR		{ $$= $1->value.var; }
+		|	VAR '=' expr	{$$ = $3; $1->value.var = $3; }
+		|	expr '+' expr { $$ = $1 + $3; }
+		|	expr '-' expr { $$ = $1 - $3; }
+		|	expr '*' expr { $$ = $1 * $3; }
+		|	expr '/' expr { $$ = $1 / $3; }
+		;
+%%
+
+void main()
+{
+	

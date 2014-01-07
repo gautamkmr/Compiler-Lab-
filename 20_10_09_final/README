@@ -1,0 +1,12 @@
+Format
+  <no> Semantic errors detected.
+  -----(Checks to be done)
+  -----[Please execute and see]
+
+1. Variable, Array, Function, argument(s) non-declaration, redeclaration.
+
+2. Return type, signature, match, name & type equivalence 
+
+3. Ensure that there is only one return type (As Chetan said)
+
+

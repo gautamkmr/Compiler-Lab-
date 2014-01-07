@@ -1,0 +1,46 @@
+decl
+	integer extendedeuclid(integer a,b);
+	integer alpha, beta;
+enddecl
+
+integer extendedeuclid (integer a,b) {
+	decl
+		integer x, y;
+		integer quotient, temp;
+	enddecl
+begin
+	x = 0;
+	y = 1;
+	while (b!=0) do
+		quotient = (a/b);
+	
+		temp = b;
+		b = (a%b);
+		a = temp;
+	
+		temp = x;
+		x = (alpha-(quotient*x));
+		alpha = temp;
+	
+		temp = y;
+		y = (beta-(quotient*y));
+		beta = temp;
+	endwhile;
+
+	return 0;
+end
+}
+
+integer main(){
+	decl
+		integer test;
+	enddecl
+begin
+	alpha = 1;
+	beta = 0;
+	test = extendedeuclid (35,20);
+	write(alpha);
+	write(beta);
+	return 0;
+end
+}

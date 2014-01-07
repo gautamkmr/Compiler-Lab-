@@ -1,0 +1,109 @@
+F0:		// Function definition for 'f'
+MOV BP SP	// Moving current SP to BP
+PUSH R0
+MOV R1 BP	//	Moving base pointer to a register.
+MOV R0 -2	//	Storing the relative address of the variable.
+ADD R0 R1	//	Computing absolute address...
+MOV R0 [R0]	//	Moving variable contents to register.
+MOV R1 500	//	Moving constant to a register.
+GT R0 R1	//	Greater than.
+JZ R0 L0	// If then else
+MOV R0 500	//	Moving constant to a register.
+MOV R1 BP	//	Moving base pointer to a register.
+MOV R2 1	//	Moving relative address of variable
+ADD R1 R2	//	Computing absolute address...
+MOV [R1] R0	//	Assigning register contents to variable
+JMP L1
+L0:		// ...else
+PUSH R0		// Pushing dummy variable for storing return value.
+PUSH R0
+PUSH R1
+PUSH R2
+PUSH R3
+PUSH R4
+PUSH R5
+PUSH R6
+PUSH R7
+PUSH BP		// Storing caller's BP.
+MOV R1 BP	//	Moving base pointer to a register.
+MOV R0 -1	//	Storing the relative address of the variable.
+ADD R0 R1	//	Computing absolute address...
+MOV R0 [R0]	//	Moving variable contents to register.
+PUSH R0		// Pushing the parameter.
+MOV R0 500	//	Moving constant to a register.
+PUSH R0		// Pushing the parameter.
+MOV R0 1	//	Moving true(1) to a register.
+PUSH R0		// Pushing the parameter.
+CALL F0		// Making the function call.
+POP R0		// Poping the parameters.
+POP R0		// Poping the parameters.
+POP R0		// Poping the parameters.
+POP BP		// Restoring caller's BP.
+POP R7
+POP R6
+POP R5
+POP R4
+POP R3
+POP R2
+POP R1
+POP R0
+POP R0		// Copying back the return value.
+MOV R1 BP	//	Moving base pointer to a register.
+MOV R2 1	//	Moving relative address of variable
+ADD R1 R2	//	Computing absolute address...
+MOV [R1] R0	//	Assigning register contents to variable
+L1:		// End if else
+MOV R1 BP	//	Moving base pointer to a register.
+MOV R0 1	//	Storing the relative address of the variable.
+ADD R0 R1	//	Computing absolute address...
+MOV R0 [R0]	//	Moving variable contents to register.
+MOV R1 BP
+MOV R2 13
+SUB R1 R2
+MOV [R1] R0
+POP R0
+RET
+
+START
+MOV BP SP	// Moving current SP to BP
+PUSH R0
+PUSH R0		// Pushing dummy variable for storing return value.
+PUSH R0
+PUSH R1
+PUSH R2
+PUSH R3
+PUSH R4
+PUSH R5
+PUSH R6
+PUSH R7
+PUSH BP		// Storing caller's BP.
+MOV R0 0	//	Moving false(0) to a register.
+PUSH R0		// Pushing the parameter.
+MOV R0 600	//	Moving constant to a register.
+PUSH R0		// Pushing the parameter.
+MOV R0 1	//	Moving true(1) to a register.
+PUSH R0		// Pushing the parameter.
+CALL F0		// Making the function call.
+POP R0		// Poping the parameters.
+POP R0		// Poping the parameters.
+POP R0		// Poping the parameters.
+POP BP		// Restoring caller's BP.
+POP R7
+POP R6
+POP R5
+POP R4
+POP R3
+POP R2
+POP R1
+POP R0
+POP R0		// Copying back the return value.
+MOV R1 BP	//	Moving base pointer to a register.
+MOV R2 1	//	Moving relative address of variable
+ADD R1 R2	//	Computing absolute address...
+MOV [R1] R0	//	Assigning register contents to variable
+MOV R1 BP	//	Moving base pointer to a register.
+MOV R0 1	//	Storing the relative address of the variable.
+ADD R0 R1	//	Computing absolute address...
+MOV R0 [R0]	//	Moving variable contents to register.
+OUT R0		//	Output the register content
+HALT

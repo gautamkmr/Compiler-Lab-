@@ -1,0 +1,47 @@
+decl
+	integer f(integer x,y);
+	integer g(integer x,y);
+enddecl
+
+integer f (integer x,y) {
+	decl
+		integer temp;
+	enddecl
+begin
+	if (y != 0) then
+		temp = g(x+1,y-1);
+	else
+		temp = g(x,y);
+	endif;
+	return temp;
+end
+}
+
+integer g(integer x,y) {
+	decl
+		integer temp;
+	enddecl
+begin
+	if (y == 0) then
+		temp = x;
+	else
+		if(x == 0) then
+			temp = y;
+		else
+			temp = 1 + g(x-1,y-1);
+		endif;
+	endif;
+	return temp;
+end
+}
+
+integer main(){
+	decl
+		integer test;
+	enddecl
+begin
+	test = f (10,0);
+	write(test);
+	return 0;
+end
+}

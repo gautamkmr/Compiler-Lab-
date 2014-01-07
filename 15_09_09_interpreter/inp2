@@ -1,0 +1,33 @@
+begin
+decl
+	integer temp, n, prod,x;
+	integer a[10];
+	boolean r;
+enddecl
+
+temp = 1;
+prod = 1;
+read(n);
+
+while(temp <= n) do
+	prod = prod * temp;
+	a[temp] = prod;
+	temp = temp + 1;
+endwhile;
+
+write(prod);
+
+temp = temp - 1;
+
+while(temp > 0) do
+	write(a[temp]);
+	temp = temp - 1;
+endwhile;
+
+read(x);
+read (a [x]);
+
+write (7*(5+a[x]));
+
+
+end
