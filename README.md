@@ -6,5 +6,5 @@ Compiler-Lab-
  
  Lab Partners:   
  
- Chetan S. Roa, Dinesh Krishnamurthy and Gautam Kumar.
+ Chetan S. Rao, Dinesh Krishnamurthy and Gautam Kumar.
 
