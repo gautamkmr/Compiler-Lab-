@@ -1,1 +1,80 @@
 
+Compiler :
+
+
+  Lexical Analyzer : input to La done by ls  Exprtree.l given flex generates the lex.yy.c 
+  
+
+  parsing: expreetree.y we specified grammer 
+  
+  expreetree.y open test program  goto expresse.tab.*
+   in expreetree.l takes that expreesion.tab.* and knows sil test
+   
+   so whenever parser(exprtree.y) needs a token it calls YYLEX AND get the token.
+   and if we want to pass value from lex to par we use yylval returns a value (come into $1, $2..in parser)
+   
+   absyntree.c we build tree (semantic tree) 
+   expreetree.y perform the action execution matching grammer rule semantic check
+   
+   
+   
+   At this end we have program which is sytactically and semantically correct.
+   
+   We need to pass this absyntaxtree to codegen
+   
+
+  
+  absyntax tree : parsger generates this
+  parsing done by exprtree.y (yacc)
+  put the grammer on exprtree.y
+  bison (yacc) takes exprtree.y genreates  exprtree.tab.c  exprtree.tab.h
+  to generate the code we write on 
+  
+  
+  code generation: codegen.c,codegen.h
+  
+  we pass the generated code to the sim 
+  
+  Instruction: 
+  
+   clear 
+   bison Exprtree.y
+   flex Exprtree.l
+   gcc lex.yy.c Exprtree.tab.c SymbTab.c AbsSynTree.c codegen.c -o Eval
+   
+   #EVAL is our compiler <input file> <codegenerated file>  
+   ./EVAL <input> x.sim
+   
+   ./Eval inp x.sim
+  
+  <simulator> <codegerenated file>
+  ./sim x.sim
+  
+  
+  
+  
+  Exprtree.l  takes sil (simple integer language) similar to c
+  
+  eg: test program
+  decl
+     //declaration area
+  enddecl 
+  
+  begin
+      code area
+  end
+  
+  in exprtee.l we define what are the token
+  
+  
+  
+  LA: 
+  
+  GCC : 
+       cc preprocess
+       cc1  core compiler 1
+       assembler
+       link editor
+       
+  
+  
